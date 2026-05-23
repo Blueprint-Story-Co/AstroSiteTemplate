@@ -1,0 +1,32 @@
+---
+import { navLinks, ctaLink } from '../data/nav.js';
+const currentPath = Astro.url.pathname;
+---
+<nav class="flex items-center justify-between px-4 py-6">
+    <div class="logo">
+        <a href="/">Logo</a>
+    </div>
+
+    <!--Mobile Hamburger Button Hidden on Desktop -->
+    <button id="menu-toggle" class="md:hidden">☰
+    </button>
+
+    <!--Navlinks - Hidden on Mobile by Default -->
+    <ul id="nav-menu" class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+            <li class={`${link.temp ? 'temp' : ''} ${link.href === currentPath ? 'active' : ''}`}>
+                <a href={link.href}>{link.label}</a>
+            </li>
+        ))}
+    </ul>
+    <a href={ctaLink.href} class="cta">{ctaLink.label}</a>
+</nav>
+
+<script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('nav-menu')
+
+    toggle?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+    });
+</script>

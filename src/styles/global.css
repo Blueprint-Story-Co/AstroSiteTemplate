@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Nav Styles */
+.active a {
+  font-weight: bold;
+  text-decoration: underline;
+}

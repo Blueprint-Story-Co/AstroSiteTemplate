@@ -1,0 +1,22 @@
+---
+import { footerLinks, socialLinks, copyrightText } from '../data/footer.js';
+---
+<nav>
+    <ul class="flex items-center gap-6">
+        {footerLinks.map(link => (
+            <li class={link.temp ? 'temp' : ''}>
+                <a href={link.href}>{link.label}</a>
+            </li>
+        ))}
+    </ul>
+    <ul class="flex items-center gap-6">
+        {
+            socialLinks.map(link =>(
+                <li>
+                    <a href={link.href}>{link.label}</a>
+                </li>
+            ))
+        }
+    </ul>
+    <p>{copyrightText}</p>
+</nav>
