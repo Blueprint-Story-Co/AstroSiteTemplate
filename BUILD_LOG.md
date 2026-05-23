@@ -274,3 +274,30 @@ Unlike frontmatter JS which runs on the server, the `<script>` tag runs in the b
 ## Next Steps
 1. Push `AstroTemplate` to GitHub as a reusable starter template
 2. Copy into a new project folder for the Hart of Folsom site build
+
+---
+
+## Using This Template — Setup Steps
+
+When starting a new project from this template:
+
+1. **Pull the template using degit** (repo must be public):
+```bash
+npx degit Blueprint-Story-Co/AstroSiteTemplate YourProjectName
+```
+
+2. **Install dependencies** — `node_modules` is not included in the repo:
+```bash
+cd YourProjectName
+npm install
+```
+
+3. **Start the dev server:**
+```bash
+npm run dev
+```
+
+**Important notes:**
+- Always run `npm install` first — every project needs its own `node_modules`
+- Store projects in a local folder, not inside iCloud or Google Drive
+- `node_modules` is in `.gitignore` by design — never commit it
